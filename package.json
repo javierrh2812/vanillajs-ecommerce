@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=prod node app.js",
+    "heroku-postbuild": "npx prisma generate",
     "dev": "nodemon app.js"
   },
   "dependencies": {
