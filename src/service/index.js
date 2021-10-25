@@ -6,6 +6,7 @@ const service = () => {
   });
 };
 
+// inyección de prisma
 const exposeService = async (req, _, next) => {
   try {
     req.prisma = service();

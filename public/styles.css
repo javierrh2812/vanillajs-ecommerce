@@ -26,8 +26,31 @@ body {
   grid-template-rows: auto auto 1fr;
   height: 100vh;
   width: 100vw;
+  grid-template-areas:
+    "header"
+    "filter"
+    "main";
+}
+@media (min-width: 640px) {
+  .wrapper {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+      "header header"
+      "filter main";
+  }
 }
 
+header.header {
+  grid-area: header;
+}
+#filter {
+  grid-area: filter;
+}
+
+main {
+  grid-area: main;
+  overflow: scroll;
+}
 /*HEADER STYLES*/
 
 header.header {
@@ -151,11 +174,21 @@ button {
 #filter {
   display: flex;
   align-items: center;
-  height: calc(0.8 * var(--navHeight));
-  padding: 0 1rem;
+  padding: 1rem;
   gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
+@media (min-width: 640px) {
+  #filter {
+    height: calc(100vh - var(--navHeight));
+    align-items: start;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content:center;
+  }
+}
 #filter h2 {
   padding: 0;
   margin: 0;
@@ -164,12 +197,9 @@ button {
 }
 
 #filter button {
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 50%;
+  background-color: var(--blue);
+  color: white;
+  padding: 0.6rem;
 }
 #filter svg {
   height: 14px;
@@ -206,4 +236,8 @@ MODALL
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s;
+}
+
+.hide {
+  display: none;
 }

@@ -27,15 +27,7 @@ export const filterProps = {
     {
       value: 30,
       name: "Más de 30%",
-    },
-    {
-      value: 0,
-      name: "Más de 0%",
-    },
-    {
-      value: 0,
-      name: "Más de 0%",
-    },
+    }
   ],
   prices: [
     {
