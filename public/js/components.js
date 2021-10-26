@@ -1,6 +1,6 @@
 import { filterProps } from "./constants.js";
-import { storage, select, fetcher } from "./utils.js";
-
+import { storage, select } from "./utils.js";
+import fetcher from "./fetch.js"
 export const Products = () => {
   const products = document.createElement("main");
   products.innerHTML = `
