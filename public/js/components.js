@@ -41,9 +41,9 @@ export const Filter = () => {
       .then(({ data }) => {
         categories = data;
         storage.set("categories", data);
-        filter= FilterModal(data);
+        filter.innerHTML= FilterModal(data);
       })
-      .catch(onError);
+      .catch(e=>console.log(e));
   else {
     filter.innerHTML = FilterModal(categories);
   }
